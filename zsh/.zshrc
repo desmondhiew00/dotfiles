@@ -85,7 +85,6 @@ alias p='pnpm'
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Starship
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
 # FZF

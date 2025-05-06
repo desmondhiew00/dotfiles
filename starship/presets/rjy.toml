@@ -1,0 +1,165 @@
+add_newline = true
+scan_timeout = 500
+command_timeout = 5000
+format = '$all$line_break$env_var$character'
+ 
+[env_var.VIRTUAL_ENV]
+format = 'venv:[$env_value]($style) '
+style = 'yellow bold'
+ 
+[time]
+disabled = false
+format = '🕙[$time]($style) '
+ 
+[directory]
+format = "[💻RJY](243)[📂 $path]($style)[$read_only]($read_only_style)[](243) "
+style = "bg:243"
+read_only_style = "bg:243"
+truncation_symbol = '…/'
+
+[battery]  
+full_symbol = '🔋 '  
+charging_symbol = '🔌 '  
+discharging_symbol = '⚡️ '  
+unknown_symbol = '❓ '  
+empty_symbol = '🪫⚡️0%'  
+format = '[$symbol$percentage]($style) '  
+
+# 当电量在 0% 到 29% 之间时  
+[[battery.display]]  
+threshold = 30  
+style = 'bold red'  
+discharging_symbol = '⚡️'  
+  
+# 当电量在 30% 到 69% 之间时  
+[[battery.display]]  
+threshold = 70  
+style = 'bold yellow'  
+discharging_symbol = '🔋⚡️'
+
+# 当电量在 30% 到 100% 之间时  
+[[battery.display]]
+style = 'bold green'  
+discharging_symbol = '🔋⚡️' # 或者你选择的符号  
+charging_symbol = '🔋🔌' # 充电时的符号
+
+[cmd_duration]
+min_time = 100
+format = '🐌[$duration](bold yellow) '
+ 
+[aws]
+symbol = "☁️ "
+ 
+[buf]
+symbol = "🦬 "
+
+[c]
+symbol = "C "
+ 
+[conda]
+format = '[$symbol$environment](dimmed green) '
+symbol = "🅒 "
+ 
+[dart]
+format = 'via [🔰 $version](bold red) '
+symbol = "🎯 "
+ 
+[docker_context]
+symbol = "🐳 "
+format = 'via [🐋 $context](blue bold)'
+ 
+[elixir]
+symbol = "🔮 "
+ 
+[elm]
+symbol = "🌳 "
+format = 'via [ $version](cyan bold) '
+ 
+[fossil_branch]
+symbol = '🦎 '
+truncation_length = 4
+truncation_symbol = ''
+ 
+[git_branch]
+symbol = "🌱 "
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "bold yellow"
+ 
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+ 
+[golang]
+symbol = "🐹 "
+format = 'via [🏎💨 $version](bold cyan) '
+ 
+[guix_shell]
+symbol = "🐃 "
+format = 'via [🐂](yellow bold) '
+ 
+[haskell]
+symbol = " "
+ 
+[haxe]
+symbol = " "
+ 
+[hg_branch]
+symbol = " "
+ 
+[hostname]
+ssh_symbol = " "
+ 
+[java]
+symbol = '🌟 '
+ 
+[julia]
+symbol = " "
+ 
+[lua]
+symbol = "🌙 "
+format = 'via [🌕 $version](bold blue) '
+ 
+[meson]
+symbol = "󰔷 "
+ 
+[nim]
+symbol = "󰆥 "
+ 
+[nix_shell]
+symbol = " "
+ 
+[nodejs]
+symbol = " "
+format = 'via [🤖 $version](bold green) '
+ 
+[package]
+symbol = "📦 "
+format = 'is [$symbol$version]($style) '
+style = '208 bold'
+ 
+[pijul_channel]
+symbol = " "
+ 
+[python]
+symbol = "🐍 "
+ 
+[erlang]
+symbol = "󰟔 "
+ 
+[ruby]
+symbol = " "
+ 
+[rust]
+symbol = " "
+ 
+[scala]
+symbol = " "
