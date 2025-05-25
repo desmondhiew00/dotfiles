@@ -58,8 +58,8 @@ export GEM_HOME="$HOME/.gem"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # DENO
-export DENO_INSTALL="/Users/desmondhui/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# export DENO_INSTALL="/Users/desmondhui/.deno"
+# export PATH="$DENO_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/opt/homebrew/bin/pnpm"
@@ -95,3 +95,6 @@ export FZF_ALT_C_COMMAND="fd --type f --hidden --strip-cwd-prefix --exclude .git
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# pnpm completion
+source ~/completion-for-pnpm.bash

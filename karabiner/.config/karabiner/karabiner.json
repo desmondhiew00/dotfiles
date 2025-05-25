@@ -10,8 +10,8 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "right_control" }]
+                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+                            "to": [{ "key_code": "caps_lock" }]
                         },
                         {
                             "from": { "key_code": "right_command" },
@@ -20,10 +20,6 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "lang2" }]
-                        },
-                        {
-                            "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-                            "to": [{ "key_code": "caps_lock" }]
                         }
                     ]
                 }

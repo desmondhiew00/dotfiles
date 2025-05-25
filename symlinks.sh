@@ -30,7 +30,8 @@ echo "📁 Backing up existing files..."
 [ -f "$HOME/.p10k.zsh" ] && mv "$HOME/.p10k.zsh" "$BACKUP_DIR/"
 
 # Config files
-for dir in zsh stow karabiner nushell starship nvim; do
+CONFIG_DIR=(zsh stow karabiner nushell starship nvim)
+for dir in "${CONFIG_DIR[@]}"; do
   if [ -d "$HOME/.config/$dir" ]; then
     echo "↪ Backing up ~/.config/$dir"
     mv "$HOME/.config/$dir" "$BACKUP_DIR/.config/"
@@ -41,13 +42,14 @@ done
 echo "🔗 Applying stow to dotfiles..."
 cd "$DOTFILES_DIR"
 
-for module in stow zsh nvim git nushell starship karabiner; do
+MODULES=(zsh stow nvim git nushell starship karabiner)
+for module in "${MODULES[@]}"; do
   echo "🔧 Stowing $module..."
   stow -v "$module"
 done
 
 # === Symlink nushell config if on macOS ===
-IS_MACOS=$(uname -s | grep -q Darwin && echo "true" || echo "false") 
+IS_MACOS=$(uname -s | grep -q Darwin && echo "true" || echo "false")
 if [ "$IS_MACOS" = "true" ]; then
   echo "🔗 Symlinking nushell config..."
   ln -s "$HOME/Library/Application Support/nushell/config.nu" "$HOME/.config/nushell/config.nu"

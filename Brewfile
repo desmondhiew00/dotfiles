@@ -23,3 +23,8 @@ cask 'sublime-text' # best text editor
 # Fonts
 cask 'font-fira-code'
 cask 'font-fira-code-nerd-font'
+
+# VSCode
+cask 'visual-studio-code'
+
+vscode 'esbenp.prettier-vscode'
