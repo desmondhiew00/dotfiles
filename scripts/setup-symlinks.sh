@@ -29,3 +29,7 @@ mkdir -p "./cursor/.config/cursor"
 ln -s "$APP_SUPPORT_DIR/Cursor/User/keybindings.json" "./cursor/.config/cursor/keybindings.json"
 ln -s "$APP_SUPPORT_DIR/Cursor/User/settings.json" "./cursor/.config/cursor/settings.json"
 echo "✅ Symlinked cursor config.\n"
+
+echo "🔗 Symlinking git config..."
+ln -s "$HOME/.gitconfig.local" "./git/.gitconfig.local"
+echo "✅ Symlinked git config.\n"
