@@ -10,12 +10,14 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
+      "cmd-e": "project_panel::ToggleFocus"
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      "cmd-e": "project_panel::ToggleFocus"
+      "cmd-e": "project_panel::ToggleFocus",
+      "alt-shift-f": "editor::Format"
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
   }

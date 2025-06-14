@@ -1,0 +1,25 @@
+[
+	{
+        "keys": ["alt+up"],
+        "command": "swap_line_up"
+    },
+    {
+        "keys": ["alt+down"],
+        "command": "swap_line_down"
+    },
+    {
+        "keys": ["super+alt+up"],
+        "command": "select_lines",
+        "args": {"forward": false}
+    },
+    {
+        "keys": ["super+alt+down"],
+        "command": "select_lines",
+        "args": {"forward": true}
+    },
+     {
+        "keys": ["super+shift+l"],
+        "command": "find_all_under",
+        "args": {"to": "line"}
+    }
+]

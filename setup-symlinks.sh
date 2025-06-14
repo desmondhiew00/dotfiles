@@ -7,42 +7,32 @@ if [ "$1" = "-f" ]; then
   FORCE=true
 fi
 
-DOTFILES_DIR="$HOME/dotfiles"
-BACKUP_DIR="$HOME/dotfiles_bak"
+BACKUP_DIR="$HOME/.dotfiles_bak"
 
 echo "🔍 Checking if dotfiles are already migrated..."
 if [ "$FORCE" = false ]; then
-  if [ -L "$HOME/.zshrc" ] || [ -L "$HOME/.config/nushell/config.nu" ]; then
+  if [ -L "$HOME/.zshrc" ] then
     echo "✅ Dotfiles already appear to be symlinked. Skipping migration."
     exit 0
   fi
 fi
 
 echo "📦 Creating backup directory: $BACKUP_DIR"
-mkdir -p "$BACKUP_DIR/.config"
 
 # === Back up existing files ===
 echo "📁 Backing up existing files..."
 
+cp -r "$HOME/.config" "$BACKUP_DIR"
+
 # Top-level files
 [ -f "$HOME/.zshrc" ] && mv "$HOME/.zshrc" "$BACKUP_DIR/"
 [ -f "$HOME/.gitconfig" ] && mv "$HOME/.gitconfig" "$BACKUP_DIR/"
-[ -f "$HOME/.p10k.zsh" ] && mv "$HOME/.p10k.zsh" "$BACKUP_DIR/"
-
-# Config files
-CONFIG_DIR=(zsh stow karabiner nushell starship nvim)
-for dir in "${CONFIG_DIR[@]}"; do
-  if [ -d "$HOME/.config/$dir" ]; then
-    echo "↪ Backing up ~/.config/$dir"
-    mv "$HOME/.config/$dir" "$BACKUP_DIR/.config/"
-  fi
-done
+# [ -f "$HOME/.p10k.zsh" ] && mv "$HOME/.p10k.zsh" "$BACKUP_DIR/"
 
 # === Apply stow ===
 echo "🔗 Applying stow to dotfiles..."
-cd "$DOTFILES_DIR"
 
-MODULES=(zsh stow nvim git nushell starship karabiner)
+MODULES=(cursor git karabiner nushell nvim starship sublime zed zsh)
 for module in "${MODULES[@]}"; do
   echo "🔧 Stowing $module..."
   stow -v "$module"
@@ -55,4 +45,4 @@ if [ "$IS_MACOS" = "true" ]; then
   ln -s "$HOME/Library/Application Support/nushell/config.nu" "$HOME/.config/nushell/config.nu"
 fi
 
-echo "🎉 Migration complete! Your dotfiles are now managed with stow."
+echo "✅ Symlinks applied."

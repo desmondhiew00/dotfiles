@@ -1,30 +1,31 @@
-# Binaries
-brew 'wget' # file downloader
-brew 'htop' # a colorful top alternative
-brew 'diff-so-fancy' # good-looking diffs
+# System
+brew 'bat' # better cat
+brew 'btop' # better than htop
+brew 'cloc' # count lines of code
+brew 'fzf' # fuzzy file searcher, used in scripts and in vim
+brew 'nvim' # vim
 brew 'stow' # symlink manager
 brew 'tldr' # better than help
-brew 'bat' # better cat
-brew 'fzf' # fuzzy file searcher, used in scripts and in vim
-brew 'fd' # fast find
-brew 'eza' # ls alternative
 brew 'tree' # pretty-print directory contents
-brew 'nvim' # vim (latest)
+brew 'wget' # file downloader
 brew 'zoxide' # switch between most used directories
-brew 'git' # git version control (latest version)
-brew 'pyenv' # tool for Python version management
+brew 'nushell'
+brew 'starship'
+
+# Development
+brew 'fnm' # fast node manager (better nvm)
+brew 'go'
+brew 'pyenv' # Python version management
 brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
-brew 'lazygit' # TUI for git commands
-brew 'fnm' # fast node manager
+
+# brew 'diff-so-fancy' # good-looking diffs
+# brew 'lazydocker'
 
 # Apps
 cask 'sublime-text' # best text editor
+cask 'visual-studio-code'
+cask 'cursor'
 
 # Fonts
 cask 'font-fira-code'
 cask 'font-fira-code-nerd-font'
-
-# VSCode
-cask 'visual-studio-code'
-
-vscode 'esbenp.prettier-vscode'

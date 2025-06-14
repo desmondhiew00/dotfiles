@@ -65,6 +65,9 @@ export PATH="$HOME/development/flutter/bin:$PATH"
 export PNPM_HOME="/opt/homebrew/bin/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# PostgreSQL
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
 # ---------------------------------------------------------------------------- #
 #                                    Aliases                                   #
 # ---------------------------------------------------------------------------- #
@@ -76,6 +79,16 @@ alias python='python3'
 alias py='python3'
 alias pip='pip3'
 alias p='pnpm'
+
+# Git shortcuts
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log'
+alias gp='git pull'
+alias gpo='git pull origin'
 
 # ---------------------------------------------------------------------------- #
 #                                      CLI                                     #
