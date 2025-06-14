@@ -56,7 +56,7 @@ source ~/.config/nushell/completions/pnpm-completions.nu
 source ~/.config/nushell/completions/ssh-completions.nu
 source ~/.config/nushell/completions/yarn-v4-completions.nu
 
-source ~/.config/nushell/zoxide.nu
+# source ~/.config/nushell/zoxide.nu
 
 # -------------------------------- Starship -------------------------------- #
 mkdir ($nu.data-dir | path join "vendor/autoload")

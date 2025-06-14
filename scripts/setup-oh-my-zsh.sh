@@ -49,5 +49,6 @@ install_omz_plugin() {
 # === Install OMZ themes and plugins
 install_omz_plugin theme powerlevel10k https://github.com/romkatv/powerlevel10k.git
 install_omz_plugin plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git
+install_omz_plugin plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 echo "✅ Oh My Zsh setup complete!"

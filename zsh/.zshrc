@@ -28,8 +28,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # ---------------------------------------------------------------------------- #
 #                                     PATH                                     #
@@ -47,15 +47,15 @@ export PATH="$PATH:$ANDROID_HOME/tools"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 
 # Go Lang
-export GOPATH="$HOME/development/go"
-export PATH="$PATH:$(go env GOPATH)/bin"
+# export GOPATH="$HOME/development/go"
+# export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 
 # Flutter
-export PATH="$HOME/development/flutter/bin:$PATH"
+# export PATH="$HOME/development/flutter/bin:$PATH"
 
 # DENO
 # export DENO_INSTALL="/Users/desmondhui/.deno"
@@ -110,4 +110,4 @@ export FZF_ALT_C_COMMAND="fd --type f --hidden --strip-cwd-prefix --exclude .git
 eval "$(zoxide init zsh)"
 
 # pnpm completion
-source ~/completion-for-pnpm.bash
+source ~/.config/zsh/completion-for-pnpm.bash

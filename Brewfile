@@ -17,6 +17,7 @@ brew 'fnm' # fast node manager (better nvm)
 brew 'go'
 brew 'pyenv' # Python version management
 brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
+brew 'postgresql@17'
 
 # brew 'diff-so-fancy' # good-looking diffs
 # brew 'lazydocker'

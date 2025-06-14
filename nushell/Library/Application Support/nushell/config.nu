@@ -1,1 +1,0 @@
-/Users/desmondhui/Library/Application Support/nushell/config.nu
