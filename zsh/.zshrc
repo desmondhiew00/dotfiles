@@ -47,8 +47,7 @@ export PATH="$PATH:$ANDROID_HOME/tools"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 
 # Go Lang
-# export GOPATH="$HOME/development/go"
-# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$HOME/go/bin:$PATH"
 
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -84,11 +83,12 @@ alias p='pnpm'
 alias g='git'
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gcm='git commit -m'
 alias gp='git push'
 alias gl='git log'
 alias gp='git pull'
 alias gpo='git pull origin'
+alias gco='git checkout'
 
 # ---------------------------------------------------------------------------- #
 #                                      CLI                                     #
@@ -99,6 +99,13 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Starship
 eval "$(starship init zsh)"
+
+if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
+    export STARSHIP_CONFIG="$HOME/configs/starship-mac.toml"
+else
+    export STARSHIP_CONFIG="$HOME/.config/starship.toml"  # fallback
+fi
+
 
 # FZF
 source <(fzf --zsh)

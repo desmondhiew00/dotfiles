@@ -1,6 +1,37 @@
 {
     "profiles": [
         {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Cmd+F1 to English, Cmd+F2 to Chinese input",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f1",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.keylayout.ABC" } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f2",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.inputmethod.SCIM.ITABC" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": {
@@ -11,7 +42,7 @@
                     "simple_modifications": [
                         {
                             "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
-                            "to": [{ "key_code": "lang2" }]
+                            "to": [{ "key_code": "caps_lock" }]
                         },
                         {
                             "from": { "key_code": "caps_lock" },
