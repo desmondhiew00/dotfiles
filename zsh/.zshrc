@@ -20,6 +20,7 @@ plugins=(
   fnm
   fzf
   zsh-syntax-highlighting
+  zsh-pnpm-completions
   colored-man-pages
   extract
   npm
@@ -106,7 +107,6 @@ else
     export STARSHIP_CONFIG="$HOME/.config/starship.toml"  # fallback
 fi
 
-
 # FZF
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -116,5 +116,15 @@ export FZF_ALT_C_COMMAND="fd --type f --hidden --strip-cwd-prefix --exclude .git
 # zoxide
 eval "$(zoxide init zsh)"
 
-# pnpm completion
-source ~/.config/zsh/completion-for-pnpm.bash
+# -------------------------------- Completion -------------------------------- #
+
+# Makefile target completion
+# https://gitgist.com/posts/makefile-zsh-completion-guide/
+function _makefile_targets {
+    local -a targets
+    targets=($(command make -qp 2>/dev/null | awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ && !/^Makefile/ {split($1,A,/ /);for(i in A)print A[i]}' | sort -u))
+    compadd $targets
+}
+
+compdef _makefile_targets make
+
