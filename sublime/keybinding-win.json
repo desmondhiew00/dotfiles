@@ -1,0 +1,35 @@
+[
+  {
+    "keys": ["alt+up"],
+    "command": "swap_line_up"
+  },
+  {
+    "keys": ["alt+down"],
+    "command": "swap_line_down"
+  },
+  {
+    "keys": ["ctrl+shift+l"],
+    "command": "find_all_under",
+    "args": { "to": "line" }
+  },
+  {
+    "keys": ["alt+left"],
+    "command": "move_to",
+    "args": { "to": "bol", "extend": false }
+  },
+  {
+    "keys": ["alt+right"],
+    "command": "move_to",
+    "args": { "to": "eol", "extend": false }
+  },
+  {
+    "keys": ["alt+shift+left"],
+    "command": "move_to",
+    "args": { "to": "bol", "extend": true }
+  },
+  {
+    "keys": ["alt+shift+right"],
+    "command": "move_to",
+    "args": { "to": "eol", "extend": true }
+  }
+]

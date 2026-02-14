@@ -1,0 +1,17 @@
+*.local
+
+# Karabiner
+karabiner/karabiner.json
+
+# nushell
+nushell/.config/nushell/config.nu
+nushell/.config/nushell/env.nu
+
+# sublime
+sublime/.config
+
+# cursor
+cursor/.config
+
+# zed
+zed/.config/zed/settings.json
