@@ -93,6 +93,9 @@ alias gp='git pull'
 alias gpo='git pull origin'
 alias gco='git checkout'
 
+# AWS SSM Session
+alias ec2-sample-prod='aws ssm start-session --target i-<INSTANCE_ID> --region <REGION> --profile <PROFILE>'
+
 # ---------------------------------------------------------------------------- #
 #                                      CLI                                     #
 # ---------------------------------------------------------------------------- #
@@ -138,3 +141,8 @@ compdef _makefile_targets make
 # Added by Antigravity
 export PATH="/Users/hiewdesmond/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Load local zshrc
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi

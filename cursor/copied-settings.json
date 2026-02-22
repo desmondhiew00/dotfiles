@@ -62,46 +62,43 @@
     "erlang": "escript",
     "spwn": "spwn build",
     "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
-    "gleam": "gleam run -m $fileNameWithoutExt"
+    "gleam": "gleam run -m $fileNameWithoutExt",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "biomejs.biome",
   },
   "editor.minimap.enabled": true,
   "[graphql]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "biomejs.biome",
   },
   "makefile.configureOnOpen": true,
   "editor.accessibilitySupport": "off",
   "go.toolsManagement.autoUpdate": true,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
   "editor.renderWhitespace": "all",
   "biome.suggestInstallingGlobally": false,
   "[css]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "biomejs.biome",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter",
   },
   "cSpell.userWords": ["Acception", "switchbot"],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "hediet.vscode-drawio.resizeImages": null,
   "markdown-preview-enhanced.enablePreviewZenMode": true,
-  "claudeCode.selectedModel": "sonnet"
+  "claudeCode.selectedModel": "sonnet",
 }

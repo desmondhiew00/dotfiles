@@ -15,16 +15,16 @@
     "mode": "eager",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "context_servers": {
     "mcp-server-context7": {
       "settings": {
-        "context7_api_key": "xxx"
-      }
-    }
+        "context7_api_key": "ctx7sk-0e777f33-b76a-45ba-a5b0-1d6d57f3b82a",
+      },
+    },
   },
   "icon_theme": "Catppuccin Latte",
   "vim_mode": false,
@@ -34,20 +34,20 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "VSCode Dark Polished"
+    "dark": "VSCode Dark Polished",
   },
   "jupyter": {
     "kernel_selections": {
       "typescript": "deno",
-      "javascript": "deno"
-    }
+      "javascript": "deno",
+    },
   },
   "show_whitespaces": "all",
   "lsp": {
     "biome": {
       "settings": {
-        "require_config_file": true
-      }
-    }
-  }
+        "require_config_file": true,
+      },
+    },
+  },
 }
