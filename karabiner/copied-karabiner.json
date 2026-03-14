@@ -1,120 +1,164 @@
 {
-  "profiles": [
-      {
-          "complex_modifications": {
-              "rules": [
-                  {
-                      "description": "Cmd+F1 to CapsLock, Cmd+F2 to Chinese input",
-                      "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "f1",
-                                  "modifiers": {
-                                      "mandatory": [
-                                          "command"
-                                      ],
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "select_input_source": {
-                                          "input_source_id": "com.apple.inputmethod.Kotoeri.RomajiTyping"
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          },
-                          {
-                              "from": {
-                                  "key_code": "f2",
-                                  "modifiers": {
-                                      "mandatory": [
-                                          "command"
-                                      ],
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "select_input_source": {
-                                          "input_source_id": "com.apple.inputmethod.SCIM"
-                                      }
-                                  }
-                              ],
-                              "type": "basic"
-                          },
-                          {
-                              "from": {
-                                  "key_code": "left_control",
-                                  "modifiers": {
-                                      "mandatory": [
-                                          "fn"
-                                      ],
-                                      "optional": [
-                                          "any"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "key_code": "caps_lock"
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                      ]
-                  }
-              ]
-          },
-          "devices": [
-              {
-                  "identifiers": {
-                      "is_keyboard": true,
-                      "product_id": 801,
-                      "vendor_id": 76
-                  },
-                  "simple_modifications": [
-                      {
-                          "from": {
-                              "key_code": "caps_lock"
-                          },
-                          "to": [
-                              {
-                                  "key_code": "left_control"
-                              }
-                          ]
-                      },
-                      {
-                          "from": {
-                              "key_code": "right_option"
-                          },
-                          "to": [
-                              {
-                                  "key_code": "lang2"
-                              }
-                          ]
-                      }
-                  ]
-              },
-              {
-                  "identifiers": {
-                      "is_keyboard": true,
-                      "product_id": 641,
-                      "vendor_id": 1452
-                  },
-                  "ignore": true
-              }
-          ],
-          "name": "Default profile",
-          "selected": true,
-          "virtual_hid_keyboard": {
-              "keyboard_type_v2": "ansi"
-          }
-      }
-  ]
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Cmd+F1 to Romaji input, Cmd+F2 to Chinese input",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f1",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.inputmethod.Kotoeri.RomajiTyping" } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f2",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.inputmethod.SCIM" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fn+CapsLock to CapsLock",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "caps_lock" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Home -> Ctrl+Left, End -> Ctrl+Right",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "end",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "PageUp -> CMD+Opt+Left, PageDown -> CMD+Opt+Right",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "page_up",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["left_command", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "page_down",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["left_command", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 801,
+                        "vendor_id": 76
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "lang2" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 591,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "delete_forward" },
+                            "to": [{ "consumer_key_code": "al_terminal_lock_or_screensaver" }]
+                        },
+                        {
+                            "from": { "key_code": "insert" },
+                            "to": [{ "key_code": "lang2" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
 }

@@ -96,6 +96,11 @@ alias gco='git checkout'
 # AWS SSM Session
 alias ec2-sample-prod='aws ssm start-session --target i-<INSTANCE_ID> --region <REGION> --profile <PROFILE>'
 
+alias tmx='tmux new -s'
+alias tma='tmux attach -t'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+
 # ---------------------------------------------------------------------------- #
 #                                      CLI                                     #
 # ---------------------------------------------------------------------------- #
